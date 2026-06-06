@@ -1,7 +1,107 @@
 "use client";
 import { useState } from "react";
+import dynamic from "next/dynamic";
 
-const APP_URL = "https://cryptosignal-lac.vercel.app";
+// Only load the auth UI when real Clerk keys are present.
+// When keys are placeholders the static fallback buttons render instead.
+const CLERK_READY =
+  !!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY &&
+  !process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY.includes("replace_me");
+
+const NavbarAuth = CLERK_READY
+  ? dynamic(() => import("./NavbarAuth"), { ssr: false })
+  : null;
+
+// Static fallback buttons used when Clerk is not yet configured
+function StaticButtons({ mobile, onClose }: { mobile?: boolean; onClose?: () => void }) {
+  if (mobile) {
+    return (
+      <>
+        <a
+          href="#waitlist"
+          onClick={onClose}
+          style={{
+            padding: "10px 20px",
+            fontSize: 14,
+            fontWeight: 500,
+            color: "#fff",
+            border: "1px solid rgba(255,255,255,0.22)",
+            borderRadius: 9,
+            textDecoration: "none",
+            textAlign: "center",
+          }}
+        >
+          Log In
+        </a>
+        <a
+          href="#waitlist"
+          onClick={onClose}
+          style={{
+            padding: "10px 20px",
+            fontSize: 14,
+            fontWeight: 600,
+            color: "#fff",
+            backgroundColor: "#9B5CFF",
+            borderRadius: 9,
+            textDecoration: "none",
+            textAlign: "center",
+          }}
+        >
+          Enter App
+        </a>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <a
+        href="#waitlist"
+        style={{
+          padding: "8px 18px",
+          fontSize: 14,
+          fontWeight: 500,
+          color: "#fff",
+          border: "1px solid rgba(255,255,255,0.22)",
+          borderRadius: 9,
+          textDecoration: "none",
+          transition: "border-color 0.15s, background 0.15s",
+        }}
+        onMouseEnter={(e) => {
+          (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.45)";
+          (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.05)";
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.22)";
+          (e.currentTarget as HTMLElement).style.background = "transparent";
+        }}
+      >
+        Log In
+      </a>
+      <a
+        href="#waitlist"
+        style={{
+          padding: "8px 18px",
+          fontSize: 14,
+          fontWeight: 600,
+          color: "#fff",
+          backgroundColor: "#9B5CFF",
+          borderRadius: 9,
+          textDecoration: "none",
+          transition: "background-color 0.15s",
+        }}
+        onMouseEnter={(e) =>
+          ((e.currentTarget as HTMLElement).style.backgroundColor = "#8445f7")
+        }
+        onMouseLeave={(e) =>
+          ((e.currentTarget as HTMLElement).style.backgroundColor = "#9B5CFF")
+        }
+      >
+        Enter App
+      </a>
+    </>
+  );
+}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -14,7 +114,6 @@ export default function Navbar() {
         zIndex: 50,
         backgroundColor: "#030008",
         borderBottom: "1px solid rgba(255,255,255,0.07)",
-        backdropFilter: "blur(12px)",
       }}
     >
       <div
@@ -47,64 +146,14 @@ export default function Navbar() {
         </a>
 
         {/* Desktop center links */}
-        <div
-          className="hidden md:flex items-center"
-          style={{ gap: 36 }}
-        >
+        <div className="hidden md:flex items-center" style={{ gap: 36 }}>
           <a href="#features" className="nav-link">Features</a>
           <a href="#pricing" className="nav-link">Pricing</a>
         </div>
 
         {/* Desktop right buttons */}
         <div className="hidden md:flex items-center" style={{ gap: 10 }}>
-          <a
-            href={APP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: "8px 18px",
-              fontSize: 14,
-              fontWeight: 500,
-              color: "#fff",
-              border: "1px solid rgba(255,255,255,0.22)",
-              borderRadius: 9,
-              textDecoration: "none",
-              transition: "border-color 0.15s, background 0.15s",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.45)";
-              (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.05)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.22)";
-              (e.currentTarget as HTMLElement).style.background = "transparent";
-            }}
-          >
-            Log In
-          </a>
-          <a
-            href={APP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: "8px 18px",
-              fontSize: 14,
-              fontWeight: 600,
-              color: "#fff",
-              backgroundColor: "#9B5CFF",
-              borderRadius: 9,
-              textDecoration: "none",
-              transition: "background-color 0.15s, opacity 0.15s",
-            }}
-            onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLElement).style.backgroundColor = "#8445f7")
-            }
-            onMouseLeave={(e) =>
-              ((e.currentTarget as HTMLElement).style.backgroundColor = "#9B5CFF")
-            }
-          >
-            Enter App
-          </a>
+          {NavbarAuth ? <NavbarAuth /> : <StaticButtons />}
         </div>
 
         {/* Mobile hamburger */}
@@ -155,40 +204,11 @@ export default function Navbar() {
             Pricing
           </a>
           <div style={{ height: 1, background: "rgba(255,255,255,0.07)" }} />
-          <a
-            href={APP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: "10px 20px",
-              fontSize: 14,
-              fontWeight: 500,
-              color: "#fff",
-              border: "1px solid rgba(255,255,255,0.22)",
-              borderRadius: 9,
-              textDecoration: "none",
-              textAlign: "center",
-            }}
-          >
-            Log In
-          </a>
-          <a
-            href={APP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: "10px 20px",
-              fontSize: 14,
-              fontWeight: 600,
-              color: "#fff",
-              backgroundColor: "#9B5CFF",
-              borderRadius: 9,
-              textDecoration: "none",
-              textAlign: "center",
-            }}
-          >
-            Enter App
-          </a>
+          {NavbarAuth ? (
+            <NavbarAuth mobile onClose={() => setOpen(false)} />
+          ) : (
+            <StaticButtons mobile onClose={() => setOpen(false)} />
+          )}
         </div>
       )}
     </nav>

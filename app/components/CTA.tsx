@@ -9,11 +9,24 @@ export default function CTA() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.includes("@")) setSubmitted(true);
+    if (email.includes("@")) {
+      try {
+        const existing: string[] = JSON.parse(
+          localStorage.getItem("waitlist_emails") || "[]"
+        );
+        if (!existing.includes(email)) {
+          existing.push(email);
+          localStorage.setItem("waitlist_emails", JSON.stringify(existing));
+        }
+      } catch {
+        // localStorage unavailable — submission still succeeds visually
+      }
+      setSubmitted(true);
+    }
   };
 
   return (
-    <section style={{ padding: "40px 24px 80px" }}>
+    <section id="waitlist" style={{ padding: "40px 24px 80px" }}>
       <div style={{ maxWidth: 680, margin: "0 auto" }}>
         <div
           style={{
@@ -78,7 +91,7 @@ export default function CTA() {
                   marginBottom: 20,
                 }}
               >
-                ✓ You&apos;re on the list — we&apos;ll be in touch soon!
+                You&apos;re on the list! We&apos;ll notify you at launch.
               </div>
             ) : (
               <form

@@ -78,9 +78,7 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href={APP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#waitlist"
                 className="btn-primary"
                 style={{
                   padding: "13px 26px",
