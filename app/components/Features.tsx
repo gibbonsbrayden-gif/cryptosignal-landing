@@ -1,39 +1,57 @@
 const features = [
   {
-    icon: "📡",
-    title: "AI Signal Scanner",
+    icon: "🔭",
+    title: "Early Signal Scanner",
     description:
-      "Continuously scans markets for high-probability setups powered by machine learning models trained on millions of data points.",
+      "Detect unusual volume spikes in small cap coins before they hit mainstream radar. Ranked by signal strength.",
   },
   {
     icon: "🐋",
-    title: "Whale Radar",
+    title: "Whale Tracker",
     description:
-      "Track large wallet movements and identify smart money flows before they register on price charts.",
+      "Track large on-chain moves across ETH, BNB, and Solana in real time. Know what smart money is doing before the crowd reacts.",
   },
   {
     icon: "🧠",
     title: "Narrative Intelligence",
     description:
-      "Detect emerging sector narratives and rotation patterns before they reach mainstream awareness.",
+      "See which crypto narratives are heating up right now — DeFi, AI tokens, RWA, Memecoins and more. Ranked by momentum.",
   },
   {
-    icon: "⚖️",
-    title: "Holdings Risk Evaluator",
+    icon: "🚀",
+    title: "New Token Launches",
     description:
-      "Assess portfolio concentration, correlation, and downside exposure across your entire crypto book.",
+      "Discover newly launched tokens with AI-powered safety scoring. Filter by chain, age, and liquidity to find gems early.",
   },
   {
-    icon: "🔮",
-    title: "Token Discovery",
+    icon: "💼",
+    title: "Holdings & PnL Tracker",
     description:
-      "Surface early-stage tokens with strong on-chain fundamentals before they hit major exchange listings.",
+      "Track your portfolio with real-time profit and loss calculations. AI-powered risk breakdown and upside projections.",
   },
   {
-    icon: "📊",
-    title: "Market Sentiment",
+    icon: "⏱",
+    title: "Hindsight Machine",
     description:
-      "Real-time sentiment analysis aggregated from social channels, news feeds, and on-chain activity.",
+      "What if you had bought SOL instead of DOGE? Compare any two coins over any time period and see the difference.",
+  },
+  {
+    icon: "🔔",
+    title: "Price Alerts",
+    description:
+      "Set price targets for any coin and get instant email notifications when they hit. Never miss a move again.",
+  },
+  {
+    icon: "🌅",
+    title: "AI Morning Briefing",
+    description:
+      "Start every day with an AI-generated market summary. What happened overnight, what to watch today, and your portfolio impact.",
+  },
+  {
+    icon: "🔬",
+    title: "Deep Coin Research",
+    description:
+      "Every coin page includes AI analysis, developer activity score, social buzz, price levels, news, and exchange links.",
   },
 ];
 
