@@ -265,6 +265,28 @@ body {
   background-color: rgba(155, 92, 255, 0.22);
 }
 
+/* ── Floating hero data card ─────────────────────────────────────────────── */
+.floating-card {
+  background: rgba(3, 0, 12, 0.72);
+  border: 1px solid rgba(155, 92, 255, 0.22);
+  border-radius: 12px;
+  padding: 14px 16px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.04) inset,
+    0 8px 32px rgba(0,0,0,0.55),
+    0 0 24px rgba(155,92,255,0.08);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.floating-card:hover {
+  border-color: rgba(155, 92, 255, 0.40);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.06) inset,
+    0 8px 32px rgba(0,0,0,0.65),
+    0 0 36px rgba(155,92,255,0.14);
+}
+
 /* ── Status ticker ───────────────────────────────────────────────────────── */
 .status-ticker {
   font-family: var(--font-mono-tech, monospace);
