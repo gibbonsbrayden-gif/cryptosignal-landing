@@ -129,53 +129,69 @@ export default function Hero() {
 
         {/* CTA row — matches reference image 1 button style */}
         <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap", marginBottom: 40 }}>
-          {/* Primary — solid purple */}
+          {/* Primary — VoidWatch style: dark bg, purple border, circle icon */}
           <a
             href={APP_URL}
             style={{
               display: "inline-flex",
               alignItems: "center",
-              gap: 10,
-              background: "#9B5CFF",
+              gap: 14,
+              background: "rgba(0,0,0,0.55)",
               color: "#ffffff",
-              fontFamily: "var(--font-inter, sans-serif)",
-              fontWeight: 600,
-              fontSize: 15,
-              letterSpacing: "0.01em",
-              borderRadius: 10,
-              padding: "14px 28px",
+              fontFamily: "var(--font-mono-tech, monospace)",
+              fontSize: 13,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              borderRadius: 100,
+              padding: "13px 16px 13px 26px",
               textDecoration: "none",
-              boxShadow: "0 0 28px rgba(155,92,255,0.50)",
-              transition: "background 0.15s, box-shadow 0.15s",
+              border: "1.5px solid #9B5CFF",
+              boxShadow: "0 0 18px rgba(155,92,255,0.25)",
+              transition: "box-shadow 0.15s, border-color 0.15s",
               whiteSpace: "nowrap",
+              backdropFilter: "blur(8px)",
             }}
           >
             Start Trading Smarter
+            {/* Circle badge on right — VoidWatch signature */}
+            <span
+              style={{
+                width: 30,
+                height: 30,
+                borderRadius: "50%",
+                background: "#9B5CFF",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexShrink: 0,
+                boxShadow: "0 0 12px rgba(155,92,255,0.7)",
+              }}
+            >
+              <span style={{ fontSize: 13, lineHeight: 1 }}>◎</span>
+            </span>
           </a>
 
-          {/* Secondary — dark outlined */}
+          {/* Secondary — text + arrow, VoidWatch style */}
           <a
             href="#features"
             style={{
               display: "inline-flex",
               alignItems: "center",
-              gap: 10,
-              background: "rgba(0,0,0,0.45)",
-              color: "rgba(255,255,255,0.85)",
-              fontFamily: "var(--font-inter, sans-serif)",
-              fontWeight: 600,
-              fontSize: 15,
-              letterSpacing: "0.01em",
-              borderRadius: 10,
-              padding: "14px 28px",
+              gap: 8,
+              background: "transparent",
+              color: "rgba(255,255,255,0.80)",
+              fontFamily: "var(--font-mono-tech, monospace)",
+              fontSize: 13,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
               textDecoration: "none",
-              border: "1px solid rgba(255,255,255,0.20)",
-              transition: "border-color 0.15s, background 0.15s",
+              padding: "13px 4px",
+              transition: "color 0.15s",
               whiteSpace: "nowrap",
-              backdropFilter: "blur(8px)",
             }}
           >
             Explore Features
+            <span style={{ fontSize: 16 }}>›</span>
           </a>
         </div>
 

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Share_Tech_Mono, Inter } from "next/font/google";
+import { Barlow_Condensed, Share_Tech_Mono, Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 
-const bebasNeue = Bebas_Neue({
-  weight: "400",
+const barlowCondensed = Barlow_Condensed({
+  weight: ["600", "700", "800"],
   variable: "--font-bebas",
   subsets: ["latin"],
 });
@@ -36,7 +36,7 @@ export default function RootLayout({
   const inner = (
     <html
       lang="en"
-      className={`${bebasNeue.variable} ${shareTechMono.variable} ${inter.variable}`}
+      className={`${barlowCondensed.variable} ${shareTechMono.variable} ${inter.variable}`}
     >
       <body style={{ backgroundColor: "#030008", margin: 0 }}>{children}</body>
     </html>
