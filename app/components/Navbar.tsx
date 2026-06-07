@@ -81,7 +81,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center" style={{ gap: 40 }}>
           <a href="#features" className="nav-link">Features</a>
           <a href="#pricing" className="nav-link">Pricing</a>
-          <a href={APP_URL} className="nav-link">About</a>
+          <a href="/about" className="nav-link">About</a>
         </div>
 
         {/* Desktop right buttons */}
@@ -122,6 +122,7 @@ export default function Navbar() {
         >
           <a href="#features" className="nav-link" style={{ padding: "6px 0", fontSize: 15 }} onClick={() => setOpen(false)}>Features</a>
           <a href="#pricing" className="nav-link" style={{ padding: "6px 0", fontSize: 15 }} onClick={() => setOpen(false)}>Pricing</a>
+          <a href="/about" className="nav-link" style={{ padding: "6px 0", fontSize: 15 }} onClick={() => setOpen(false)}>About</a>
           <div style={{ height: 1, background: "rgba(255,255,255,0.07)" }} />
           {NavbarAuth ? (
             <NavbarAuth mobile onClose={() => setOpen(false)} />
