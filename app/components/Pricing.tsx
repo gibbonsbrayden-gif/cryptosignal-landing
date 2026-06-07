@@ -1,6 +1,6 @@
 "use client";
 
-const APP_URL = "https://app.getcryptosignal.com";
+const APP_URL = "https://app.getcryptosignal.com/dashboard";
 
 interface Plan {
   name: string;

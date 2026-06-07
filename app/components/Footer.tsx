@@ -36,7 +36,7 @@ export default function Footer() {
               Pricing
             </a>
             <a
-              href="https://app.getcryptosignal.com"
+              href="https://app.getcryptosignal.com/dashboard"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-link"

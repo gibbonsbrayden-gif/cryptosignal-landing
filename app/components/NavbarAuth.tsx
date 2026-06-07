@@ -25,7 +25,7 @@ export default function NavbarAuth({ mobile, onClose }: Props) {
     return (
       <>
         <a
-          href="https://app.getcryptosignal.com"
+          href="https://app.getcryptosignal.com/dashboard"
           onClick={onClose}
           style={{
             padding: "10px 20px",
@@ -41,7 +41,7 @@ export default function NavbarAuth({ mobile, onClose }: Props) {
           Log In
         </a>
         <a
-          href="https://app.getcryptosignal.com"
+          href="https://app.getcryptosignal.com/dashboard"
           onClick={onClose}
           style={{
             padding: "10px 20px",
@@ -63,7 +63,7 @@ export default function NavbarAuth({ mobile, onClose }: Props) {
   return (
     <>
       <a
-        href="https://app.getcryptosignal.com"
+        href="https://app.getcryptosignal.com/dashboard"
         style={{
           padding: "8px 18px",
           fontSize: 14,
@@ -86,7 +86,7 @@ export default function NavbarAuth({ mobile, onClose }: Props) {
         Log In
       </a>
       <a
-        href="https://app.getcryptosignal.com"
+        href="https://app.getcryptosignal.com/dashboard"
         style={{
           padding: "8px 18px",
           fontSize: 14,

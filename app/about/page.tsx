@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const APP_URL = "https://app.getcryptosignal.com";
+const APP_URL = "https://app.getcryptosignal.com/dashboard";
 
 const missionCards = [
   {

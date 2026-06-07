@@ -10,7 +10,7 @@ const NavbarAuth = CLERK_READY
   ? dynamic(() => import("./NavbarAuth"), { ssr: false })
   : null;
 
-const APP_URL = "https://app.getcryptosignal.com";
+const APP_URL = "https://app.getcryptosignal.com/dashboard";
 
 function StaticButtons({ mobile, onClose }: { mobile?: boolean; onClose?: () => void }) {
   if (mobile) {
