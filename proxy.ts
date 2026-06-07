@@ -25,7 +25,8 @@ export default function proxy(req: NextRequest) {
   if (!key || key.includes("replace_me") || key.includes("your_key_here")) {
     return NextResponse.next();
   }
-  return withClerk(req);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return (withClerk as any)(req);
 }
 
 export const config = {
