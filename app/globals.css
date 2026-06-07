@@ -9,21 +9,186 @@ body {
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: var(--font-geist-sans, 'Inter', system-ui, sans-serif);
+  font-family: var(--font-inter, 'Inter', system-ui, sans-serif);
 }
 
-/* Nav link */
+/* ── Typography ──────────────────────────────────────────────────────────── */
+.font-display {
+  font-family: var(--font-bebas, 'Bebas Neue', sans-serif);
+  letter-spacing: 0.02em;
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono-tech, 'Share Tech Mono', monospace);
+}
+
+/* ── Nav link ─────────────────────────────────────────────────────────────── */
 .nav-link {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.65);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   transition: color 0.15s ease;
+  font-family: var(--font-mono-tech, monospace);
 }
 .nav-link:hover {
   color: #ffffff;
 }
 
-/* Feature card */
+/* ── Eyebrow label ─────────────────────────────────────────────────────── */
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #22c55e;
+  margin-bottom: 14px;
+  display: block;
+  font-family: var(--font-mono-tech, monospace);
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #9B5CFF;
+  color: #ffffff;
+  font-family: var(--font-mono-tech, monospace);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 100px;
+  padding: 14px 28px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 0 24px rgba(155, 92, 255, 0.45);
+  white-space: nowrap;
+}
+.btn-primary:hover {
+  background: #8445f7;
+  box-shadow: 0 0 36px rgba(155, 92, 255, 0.65);
+}
+.btn-primary-dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--font-mono-tech, monospace);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  padding: 14px 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+}
+.btn-secondary:hover {
+  color: #ffffff;
+}
+.btn-secondary-arrow {
+  font-size: 16px;
+  transition: transform 0.15s ease;
+}
+.btn-secondary:hover .btn-secondary-arrow {
+  transform: translateX(3px);
+}
+
+/* ── Navbar buttons ──────────────────────────────────────────────────────── */
+.nav-btn-login {
+  color: rgba(255,255,255,0.80);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 7px 18px;
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 8px;
+  background: transparent;
+  transition: border-color 0.15s, background 0.15s;
+  font-family: var(--font-inter, sans-serif);
+}
+.nav-btn-login:hover {
+  border-color: rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.05);
+}
+
+.nav-btn-enter {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 7px 20px;
+  border-radius: 8px;
+  background: #9B5CFF;
+  transition: background 0.15s, box-shadow 0.15s;
+  font-family: var(--font-inter, sans-serif);
+}
+.nav-btn-enter:hover {
+  background: #8445f7;
+  box-shadow: 0 0 16px rgba(155,92,255,0.45);
+}
+
+/* ── Trust pill ──────────────────────────────────────────────────────────── */
+.trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-family: var(--font-mono-tech, monospace);
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+
+/* ── Stat badge (VoidWatch style) ────────────────────────────────────────── */
+.stat-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.stat-badge-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+.stat-badge-label {
+  font-family: var(--font-mono-tech, monospace);
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.3;
+}
+
+/* ── Feature card ────────────────────────────────────────────────────────── */
 .feature-card {
   transition: border-color 0.2s ease, background-color 0.2s ease;
   cursor: default;
@@ -33,7 +198,7 @@ body {
   background-color: rgba(155, 92, 255, 0.05) !important;
 }
 
-/* Pricing card hover lift */
+/* ── Pricing card ────────────────────────────────────────────────────────── */
 .pricing-card {
   transition: transform 0.2s ease;
 }
@@ -41,17 +206,7 @@ body {
   transform: translateY(-3px);
 }
 
-/* Hero alien glow */
-.alien-glow {
-  position: absolute;
-  inset: -40%;
-  background: radial-gradient(ellipse at center, rgba(155, 92, 255, 0.55) 0%, rgba(155, 92, 255, 0.2) 35%, transparent 68%);
-  filter: blur(50px);
-  pointer-events: none;
-  border-radius: 50%;
-}
-
-/* CTA email input */
+/* ── CTA email input ─────────────────────────────────────────────────────── */
 .email-input {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -70,18 +225,7 @@ body {
   border-color: rgba(155, 92, 255, 0.6);
 }
 
-/* Trust pill */
-.trust-pill {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 100px;
-  padding: 6px 14px;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.65);
-  white-space: nowrap;
-}
-
-/* Footer link */
+/* ── Footer link ─────────────────────────────────────────────────────────── */
 .footer-link {
   color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
@@ -92,7 +236,7 @@ body {
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* Pricing plan feature row */
+/* ── Pricing feature row ─────────────────────────────────────────────────── */
 .plan-feature {
   display: flex;
   align-items: flex-start;
@@ -110,27 +254,7 @@ body {
   margin-top: 2px;
 }
 
-/* ── Button variants — hover in CSS so Hero/Pricing stay as server components ── */
-.btn-primary {
-  background-color: #9B5CFF;
-  color: #ffffff;
-  transition: background-color 0.15s ease;
-}
-.btn-primary:hover {
-  background-color: #8445f7;
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  transition: border-color 0.15s ease, background-color 0.15s ease;
-}
-.btn-secondary:hover {
-  border-color: rgba(255, 255, 255, 0.45);
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
+/* ── Btn elite ───────────────────────────────────────────────────────────── */
 .btn-elite {
   background-color: rgba(155, 92, 255, 0.12);
   border: 1px solid rgba(155, 92, 255, 0.25);
@@ -141,13 +265,10 @@ body {
   background-color: rgba(155, 92, 255, 0.22);
 }
 
-/* Section eyebrow label */
-.eyebrow {
+/* ── Status ticker ───────────────────────────────────────────────────────── */
+.status-ticker {
+  font-family: var(--font-mono-tech, monospace);
   font-size: 11px;
-  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #9B5CFF;
-  margin-bottom: 14px;
-  display: block;
 }

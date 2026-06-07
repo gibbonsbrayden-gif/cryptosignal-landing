@@ -2,8 +2,6 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 
-// Only load the auth UI when real Clerk keys are present.
-// When keys are placeholders the static fallback buttons render instead.
 const CLERK_READY =
   !!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY &&
   !process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY.includes("replace_me");
@@ -12,93 +10,25 @@ const NavbarAuth = CLERK_READY
   ? dynamic(() => import("./NavbarAuth"), { ssr: false })
   : null;
 
-// Static fallback buttons used when Clerk is not yet configured
+const APP_URL = "https://cryptosignal-lac.vercel.app";
+
 function StaticButtons({ mobile, onClose }: { mobile?: boolean; onClose?: () => void }) {
   if (mobile) {
     return (
       <>
-        <a
-          href="#waitlist"
-          onClick={onClose}
-          style={{
-            padding: "10px 20px",
-            fontSize: 14,
-            fontWeight: 500,
-            color: "#fff",
-            border: "1px solid rgba(255,255,255,0.22)",
-            borderRadius: 9,
-            textDecoration: "none",
-            textAlign: "center",
-          }}
-        >
+        <a href={APP_URL} onClick={onClose} className="nav-btn-login" style={{ textAlign: "center" }}>
           Log In
         </a>
-        <a
-          href="#waitlist"
-          onClick={onClose}
-          style={{
-            padding: "10px 20px",
-            fontSize: 14,
-            fontWeight: 600,
-            color: "#fff",
-            backgroundColor: "#9B5CFF",
-            borderRadius: 9,
-            textDecoration: "none",
-            textAlign: "center",
-          }}
-        >
+        <a href={APP_URL} onClick={onClose} className="nav-btn-enter" style={{ textAlign: "center" }}>
           Enter App
         </a>
       </>
     );
   }
-
   return (
     <>
-      <a
-        href="#waitlist"
-        style={{
-          padding: "8px 18px",
-          fontSize: 14,
-          fontWeight: 500,
-          color: "#fff",
-          border: "1px solid rgba(255,255,255,0.22)",
-          borderRadius: 9,
-          textDecoration: "none",
-          transition: "border-color 0.15s, background 0.15s",
-        }}
-        onMouseEnter={(e) => {
-          (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.45)";
-          (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.05)";
-        }}
-        onMouseLeave={(e) => {
-          (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.22)";
-          (e.currentTarget as HTMLElement).style.background = "transparent";
-        }}
-      >
-        Log In
-      </a>
-      <a
-        href="#waitlist"
-        style={{
-          padding: "8px 18px",
-          fontSize: 14,
-          fontWeight: 600,
-          color: "#fff",
-          backgroundColor: "#9B5CFF",
-          borderRadius: 9,
-          textDecoration: "none",
-          transition: "background-color 0.15s",
-        }}
-        onMouseEnter={(e) =>
-          ((e.currentTarget as HTMLElement).style.backgroundColor = "#8445f7")
-        }
-        onMouseLeave={(e) =>
-          ((e.currentTarget as HTMLElement).style.backgroundColor = "#9B5CFF")
-        }
-      >
-        Enter App
-      </a>
+      <a href={APP_URL} className="nav-btn-login">Log In</a>
+      <a href={APP_URL} className="nav-btn-enter">Enter App</a>
     </>
   );
 }
@@ -109,46 +39,49 @@ export default function Navbar() {
   return (
     <nav
       style={{
-        position: "sticky",
+        position: "fixed",
         top: 0,
-        zIndex: 50,
-        backgroundColor: "#030008",
-        borderBottom: "1px solid rgba(255,255,255,0.07)",
+        left: 0,
+        right: 0,
+        zIndex: 100,
+        backgroundColor: "rgba(3,0,8,0.75)",
+        backdropFilter: "blur(16px)",
+        WebkitBackdropFilter: "blur(16px)",
+        borderBottom: "1px solid rgba(255,255,255,0.06)",
       }}
     >
       <div
         style={{
-          maxWidth: 1200,
+          maxWidth: 1280,
           margin: "0 auto",
-          padding: "0 24px",
+          padding: "0 32px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          height: 64,
+          height: 68,
         }}
       >
-        {/* Logo */}
-        <a
-          href="/"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 8,
-            textDecoration: "none",
-          }}
-        >
-          <span style={{ fontSize: 22 }}>🛸</span>
+        {/* Logo — CRYPTO SIGNAL style from ref 2 */}
+        <a href="/" style={{ display: "flex", alignItems: "center", gap: 0, textDecoration: "none" }}>
           <span
-            style={{ fontWeight: 700, fontSize: 16, color: "#fff", letterSpacing: "-0.01em" }}
+            className="font-display"
+            style={{ fontSize: 22, color: "#ffffff", letterSpacing: "0.10em" }}
           >
-            CryptoSignal
+            CRYPTO&nbsp;
+          </span>
+          <span
+            className="font-display"
+            style={{ fontSize: 22, color: "#9B5CFF", letterSpacing: "0.10em", textShadow: "0 0 20px rgba(155,92,255,0.6)" }}
+          >
+            SIGNAL
           </span>
         </a>
 
         {/* Desktop center links */}
-        <div className="hidden md:flex items-center" style={{ gap: 36 }}>
+        <div className="hidden md:flex items-center" style={{ gap: 40 }}>
           <a href="#features" className="nav-link">Features</a>
           <a href="#pricing" className="nav-link">Pricing</a>
+          <a href={APP_URL} className="nav-link">About</a>
         </div>
 
         {/* Desktop right buttons */}
@@ -179,30 +112,16 @@ export default function Navbar() {
         <div
           className="md:hidden"
           style={{
-            borderTop: "1px solid rgba(255,255,255,0.07)",
-            backgroundColor: "#030008",
-            padding: "16px 24px 20px",
+            borderTop: "1px solid rgba(255,255,255,0.06)",
+            backgroundColor: "rgba(3,0,8,0.95)",
+            padding: "16px 32px 24px",
             display: "flex",
             flexDirection: "column",
             gap: 14,
           }}
         >
-          <a
-            href="#features"
-            className="nav-link"
-            style={{ padding: "6px 0", fontSize: 15 }}
-            onClick={() => setOpen(false)}
-          >
-            Features
-          </a>
-          <a
-            href="#pricing"
-            className="nav-link"
-            style={{ padding: "6px 0", fontSize: 15 }}
-            onClick={() => setOpen(false)}
-          >
-            Pricing
-          </a>
+          <a href="#features" className="nav-link" style={{ padding: "6px 0", fontSize: 15 }} onClick={() => setOpen(false)}>Features</a>
+          <a href="#pricing" className="nav-link" style={{ padding: "6px 0", fontSize: 15 }} onClick={() => setOpen(false)}>Pricing</a>
           <div style={{ height: 1, background: "rgba(255,255,255,0.07)" }} />
           {NavbarAuth ? (
             <NavbarAuth mobile onClose={() => setOpen(false)} />

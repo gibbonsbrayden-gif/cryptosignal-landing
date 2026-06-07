@@ -8,41 +8,70 @@ const stats = [
 
 export default function StatsBar() {
   return (
-    <section className="px-6 pb-10">
-      <div className="max-w-6xl mx-auto">
+    <section style={{ padding: "0 0 12px" }}>
+      {/* ── Status ticker bar — VoidWatch inspired ── */}
+      <div
+        style={{
+          borderTop: "1px solid rgba(34,197,94,0.15)",
+          borderBottom: "1px solid rgba(34,197,94,0.15)",
+          background: "rgba(0,0,0,0.55)",
+          backdropFilter: "blur(8px)",
+          padding: "10px 32px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 16,
+          flexWrap: "wrap",
+        }}
+      >
+        <span
+          className="status-ticker"
+          style={{ color: "rgba(34,197,94,0.75)" }}
+        >
+          &gt; Monitoring ETH · BNB · SOL · BTC
+        </span>
+
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <span
+            style={{
+              width: 6,
+              height: 6,
+              borderRadius: "50%",
+              background: "#22c55e",
+              boxShadow: "0 0 8px rgba(34,197,94,0.8)",
+              display: "inline-block",
+            }}
+          />
+          <span
+            className="status-ticker"
+            style={{ color: "rgba(34,197,94,0.75)" }}
+          >
+            System Status: Online
+          </span>
+        </div>
+      </div>
+
+      {/* ── Stat badges row ── */}
+      <div
+        style={{
+          maxWidth: 1280,
+          margin: "0 auto",
+          padding: "32px 32px 8px",
+        }}
+      >
         <div
           style={{
-            background: "#0d0d14",
-            border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: 20,
-            padding: "28px 36px",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+            gap: 24,
           }}
         >
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-            {stats.map((stat, i) => (
-              <div
-                key={stat.label}
-                className="flex flex-col sm:flex-row items-center gap-2 text-center sm:text-left py-2"
-                style={{
-                  borderRight:
-                    i < stats.length - 1
-                      ? "1px solid rgba(255,255,255,0.07)"
-                      : "none",
-                }}
-              >
-                <span style={{ fontSize: 22 }}>{stat.icon}</span>
-                <span
-                  style={{
-                    fontSize: 13,
-                    fontWeight: 500,
-                    color: "rgba(255,255,255,0.75)",
-                  }}
-                >
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
+          {stats.map((stat) => (
+            <div key={stat.label} className="stat-badge">
+              <div className="stat-badge-icon">{stat.icon}</div>
+              <span className="stat-badge-label">{stat.label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
