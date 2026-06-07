@@ -25,7 +25,7 @@ export default function NavbarAuth({ mobile, onClose }: Props) {
     return (
       <>
         <a
-          href="#waitlist"
+          href="https://cryptosignal-lac.vercel.app"
           onClick={onClose}
           style={{
             padding: "10px 20px",
@@ -41,7 +41,7 @@ export default function NavbarAuth({ mobile, onClose }: Props) {
           Log In
         </a>
         <a
-          href="#waitlist"
+          href="https://cryptosignal-lac.vercel.app"
           onClick={onClose}
           style={{
             padding: "10px 20px",
@@ -63,7 +63,7 @@ export default function NavbarAuth({ mobile, onClose }: Props) {
   return (
     <>
       <a
-        href="#waitlist"
+        href="https://cryptosignal-lac.vercel.app"
         style={{
           padding: "8px 18px",
           fontSize: 14,
@@ -86,7 +86,7 @@ export default function NavbarAuth({ mobile, onClose }: Props) {
         Log In
       </a>
       <a
-        href="#waitlist"
+        href="https://cryptosignal-lac.vercel.app"
         style={{
           padding: "8px 18px",
           fontSize: 14,
