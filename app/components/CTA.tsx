@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-const APP_URL = "https://cryptosignal-lac.vercel.app";
+const APP_URL = "https://app.getcryptosignal.com";
 
 export default function CTA() {
   const [email, setEmail] = useState("");

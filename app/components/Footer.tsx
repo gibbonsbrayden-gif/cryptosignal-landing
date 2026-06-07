@@ -36,7 +36,7 @@ export default function Footer() {
               Pricing
             </a>
             <a
-              href="https://cryptosignal-lac.vercel.app"
+              href="https://app.getcryptosignal.com"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-link"

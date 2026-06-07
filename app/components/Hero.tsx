@@ -1,6 +1,6 @@
 "use client";
 
-const APP_URL = "https://cryptosignal-lac.vercel.app";
+const APP_URL = "https://app.getcryptosignal.com";
 
 const trustPills = [
   { icon: "📊", label: "AI Driven Analysis" },

@@ -10,7 +10,7 @@ const NavbarAuth = CLERK_READY
   ? dynamic(() => import("./NavbarAuth"), { ssr: false })
   : null;
 
-const APP_URL = "https://cryptosignal-lac.vercel.app";
+const APP_URL = "https://app.getcryptosignal.com";
 
 function StaticButtons({ mobile, onClose }: { mobile?: boolean; onClose?: () => void }) {
   if (mobile) {
