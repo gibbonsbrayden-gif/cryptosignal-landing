@@ -68,12 +68,14 @@ export default function Hero() {
           maxWidth: 1280,
           margin: "0 auto",
           padding: "60px 48px 100px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
+          display: "grid",
+          gridTemplateColumns: "45% 55%",
+          alignItems: "center",
           minHeight: "calc(100vh - 68px)",
         }}
       >
+        {/* Left column — text only, stays in left 45% */}
+        <div>
         {/* Eyebrow */}
         <p
           className="font-mono-tech"
@@ -92,10 +94,9 @@ export default function Hero() {
         <h1
           className="font-display"
           style={{
-            fontSize: "clamp(72px, 8.5vw, 128px)",
+            fontSize: "clamp(64px, 7vw, 110px)",
             lineHeight: 0.93,
             margin: "0 0 28px",
-            maxWidth: 640,
           }}
         >
           <span style={{ color: "#ffffff", display: "block" }}>INTELLIGENCE.</span>
@@ -205,6 +206,10 @@ export default function Hero() {
             </span>
           ))}
         </div>
+        </div>{/* end left column */}
+
+        {/* Right column — empty, artwork fills this from the bg image */}
+        <div />
       </div>
     </section>
   );
