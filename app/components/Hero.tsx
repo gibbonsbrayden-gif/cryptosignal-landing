@@ -19,7 +19,6 @@ export default function Hero() {
         flexDirection: "column",
         justifyContent: "center",
         overflow: "hidden",
-        paddingTop: 68,
       }}
     >
       {/* ── Full-viewport background image ── */}
@@ -67,11 +66,11 @@ export default function Hero() {
           width: "100%",
           maxWidth: 1280,
           margin: "0 auto",
-          padding: "60px 48px 100px",
+          padding: "120px 48px 80px",
           display: "grid",
           gridTemplateColumns: "45% 55%",
-          alignItems: "center",
-          minHeight: "calc(100vh - 68px)",
+          alignItems: "flex-start",
+          minHeight: "100vh",
         }}
       >
         {/* Left column — text only, stays in left 45% */}
