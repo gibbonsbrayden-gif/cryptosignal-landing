@@ -1,57 +1,57 @@
 const features = [
   {
-    icon: "🔭",
-    title: "Early Signal Scanner",
+    icon: "⚡",
+    title: "Pre-Move Radar",
     description:
-      "Detect unusual volume spikes in small cap coins before they hit mainstream radar. Ranked by signal strength.",
+      "Multi-agent AI scans 200+ coins simultaneously — detecting volume anomalies, news catalysts, and narrative heat BEFORE price reacts. Find setups before the crowd notices.",
   },
   {
-    icon: "🐋",
-    title: "Whale Tracker",
+    icon: "📊",
+    title: "AI Chart Reader",
     description:
-      "Track large on-chain moves across ETH, BNB, and Solana in real time. Know what smart money is doing before the crowd reacts.",
+      "Upload any chart screenshot and get instant professional TA. Bull case, bear case, key levels, pattern detection — powered by Claude AI. 15 credits per read.",
+  },
+  {
+    icon: "🎯",
+    title: "Today's Signals",
+    description:
+      "5 AI-scored coins with converging signals every day. Volume spikes, narrative momentum, price action quality — all scored against evidence-backed research. Always free.",
   },
   {
     icon: "🧠",
     title: "Narrative Intelligence",
     description:
-      "See which crypto narratives are heating up right now — DeFi, AI tokens, RWA, Memecoins and more. Ranked by momentum.",
-  },
-  {
-    icon: "🚀",
-    title: "New Token Launches",
-    description:
-      "Discover newly launched tokens with AI-powered safety scoring. Filter by chain, age, and liquidity to find gems early.",
-  },
-  {
-    icon: "💼",
-    title: "Holdings & PnL Tracker",
-    description:
-      "Track your portfolio with real-time profit and loss calculations. AI-powered risk breakdown and upside projections.",
-  },
-  {
-    icon: "⏱",
-    title: "Hindsight Machine",
-    description:
-      "What if you had bought SOL instead of DOGE? Compare any two coins over any time period and see the difference.",
-  },
-  {
-    icon: "🔔",
-    title: "Price Alerts",
-    description:
-      "Set price targets for any coin and get instant email notifications when they hit. Never miss a move again.",
-  },
-  {
-    icon: "🌅",
-    title: "AI Morning Briefing",
-    description:
-      "Start every day with an AI-generated market summary. What happened overnight, what to watch today, and your portfolio impact.",
+      "See which crypto narratives are heating up right now — AI tokens, RWA, DePIN, DeFi and more. Ranked by momentum with the top performers in each sector.",
   },
   {
     icon: "🔬",
-    title: "Deep Coin Research",
+    title: "AI Coin Analysis",
     description:
-      "Every coin page includes AI analysis, developer activity score, social buzz, price levels, news, and exchange links.",
+      "Every coin gets a full AI breakdown: bull case, bear case, tactical thesis, risk score, entry zone, stop loss, and price targets. 10 credits. Powered by Claude AI.",
+  },
+  {
+    icon: "🌅",
+    title: "Morning Briefing",
+    description:
+      "AI market summary powered by live news. Key catalysts, what moved overnight, what to watch today. Updated every 8 hours. 5 credits.",
+  },
+  {
+    icon: "🐋",
+    title: "Whale Tracker",
+    description:
+      "Track large on-chain ETH moves in real time. See what smart money is doing before the crowd reacts. Available on Pro and Elite.",
+  },
+  {
+    icon: "🔥",
+    title: "DEX Trending",
+    description:
+      "See what tokens are getting the most DEX volume right now across Solana, Ethereum, Base and BSC. Real signals, not noise. Updated every 5 minutes.",
+  },
+  {
+    icon: "📈",
+    title: "Signal Track Record",
+    description:
+      "We track our own performance. Every signal batch recorded and checked 7 days later. Full transparent track record — no hiding bad calls.",
   },
 ];
 
@@ -80,11 +80,11 @@ export default function Features() {
             lineHeight: 1.6,
           }}
         >
-          Every tool you need to gain a real edge in crypto markets.
+          Every tool you need to catch moves before the crowd reacts.
         </p>
       </div>
 
-      {/* 3×2 grid */}
+      {/* 3×3 grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {features.map((f) => (
           <div
