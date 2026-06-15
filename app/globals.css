@@ -339,3 +339,23 @@ body {
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+
+/* ── Mobile fixes ────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .font-display {
+    font-size: clamp(36px, 11vw, 64px) !important;
+    line-height: 0.95 !important;
+  }
+
+  .hero-grid {
+    padding: 80px 20px 40px !important;
+  }
+
+  section[style*="background"] {
+    background-image: none !important;
+  }
+
+  .hero-bg-image {
+    display: none !important;
+  }
+}
