@@ -351,11 +351,5 @@ body {
     padding: 80px 20px 40px !important;
   }
 
-  section[style*="background"] {
-    background-image: none !important;
-  }
 
-  .hero-bg-image {
-    display: none !important;
-  }
 }
