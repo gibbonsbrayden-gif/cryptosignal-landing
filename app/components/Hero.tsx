@@ -21,32 +21,9 @@ export default function Hero() {
         overflow: "hidden",
         width: "100%",
         maxWidth: "100vw",
+        backgroundColor: "#030008",
       }}
     >
-      {/* ── Full-viewport background image ── */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: "url('/hero-bg.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          zIndex: 0,
-        }}
-      />
-
-      {/* ── Left text overlay — darkens only the left side ── */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "linear-gradient(100deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0.0) 70%)",
-          zIndex: 1,
-        }}
-      />
-
       {/* ── Bottom fade into page ── */}
       <div
         style={{
