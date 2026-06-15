@@ -54,7 +54,7 @@ function FeatureRow({ label, color }: { label: string; color: string }) {
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="px-6 py-20">
+    <section id="pricing" className="px-4 md:px-6 py-20 w-full">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -164,7 +164,7 @@ export default function Pricing() {
           <p style={{ fontSize: 15, fontWeight: 700, color: "rgba(255,255,255,0.60)", marginBottom: 20 }}>
             💳 Just need more credits? No subscription required.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, maxWidth: 600, margin: "0 auto" }}>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full" style={{ maxWidth: 600, margin: "0 auto" }}>
             {creditPackages.map((pkg) => (
               <div key={pkg.credits} style={{ position: "relative" }}>
                 {pkg.popular && (

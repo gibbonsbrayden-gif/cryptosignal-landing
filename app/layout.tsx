@@ -37,8 +37,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${barlowCondensed.variable} ${shareTechMono.variable} ${inter.variable}`}
+      style={{ overflowX: "hidden", maxWidth: "100vw" }}
     >
-      <body style={{ backgroundColor: "#030008", margin: 0 }}>{children}</body>
+      <body style={{ backgroundColor: "#030008", margin: 0, overflowX: "hidden", maxWidth: "100vw", width: "100%" }}>{children}</body>
     </html>
   );
 

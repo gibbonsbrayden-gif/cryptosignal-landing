@@ -26,7 +26,15 @@ export default function CTA() {
   };
 
   return (
-    <section id="waitlist" style={{ padding: "40px 24px 80px" }}>
+    <section
+      id="waitlist"
+      style={{
+        paddingTop: 40,
+        paddingBottom: 80,
+        paddingLeft: "max(16px, env(safe-area-inset-left))",
+        paddingRight: "max(16px, env(safe-area-inset-right))",
+      }}
+    >
       <div style={{ maxWidth: 680, margin: "0 auto" }}>
         <div
           style={{

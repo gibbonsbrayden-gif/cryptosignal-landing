@@ -57,7 +57,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="px-6 py-20 max-w-6xl mx-auto">
+    <section id="features" className="px-4 md:px-6 py-20 max-w-6xl mx-auto w-full">
       {/* Header */}
       <div className="text-center mb-14">
         <span className="eyebrow">Features</span>

@@ -13,14 +13,17 @@ export default function StatsBar() {
         background: "rgba(0,0,0,0.75)",
         borderTop: "1px solid rgba(255,255,255,0.08)",
         padding: "0",
+        overflowX: "auto",
+        WebkitOverflowScrolling: "touch" as const,
       }}
     >
       <div
         style={{
           maxWidth: 1280,
           margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "repeat(5, 1fr)",
+          display: "flex",
+          flexWrap: "nowrap",
+          minWidth: 600,
         }}
       >
         {stats.map((stat, i) => (
@@ -31,6 +34,8 @@ export default function StatsBar() {
               alignItems: "center",
               gap: 14,
               padding: "22px 28px",
+              flex: "1 0 auto",
+              flexShrink: 0,
               borderRight: i < stats.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none",
             }}
           >

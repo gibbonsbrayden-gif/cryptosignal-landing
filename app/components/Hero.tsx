@@ -19,6 +19,8 @@ export default function Hero() {
         flexDirection: "column",
         justifyContent: "center",
         overflow: "hidden",
+        width: "100%",
+        maxWidth: "100vw",
       }}
     >
       {/* ── Full-viewport background image ── */}
@@ -59,20 +61,7 @@ export default function Hero() {
       />
 
       {/* ── Content — left-aligned text, right side shows the artwork ── */}
-      <div
-        style={{
-          position: "relative",
-          zIndex: 3,
-          width: "100%",
-          maxWidth: 1280,
-          margin: "0 auto",
-          padding: "120px 48px 80px",
-          display: "grid",
-          gridTemplateColumns: "45% 55%",
-          alignItems: "flex-start",
-          minHeight: "100vh",
-        }}
-      >
+      <div className="hero-grid">
         {/* Left column — text only, stays in left 45% */}
         <div>
         {/* Eyebrow */}
@@ -224,7 +213,7 @@ export default function Hero() {
         </div>{/* end left column */}
 
         {/* Right column — empty, artwork fills this from the bg image */}
-        <div />
+        <div className="hero-right-col" />
       </div>
     </section>
   );

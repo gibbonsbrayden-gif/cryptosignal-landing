@@ -48,6 +48,9 @@ export default function Navbar() {
         backdropFilter: "none",
         WebkitBackdropFilter: "none",
         borderBottom: "none",
+        width: "100%",
+        maxWidth: "100vw",
+        overflowX: "hidden",
       }}
     >
       <div
