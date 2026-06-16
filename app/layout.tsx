@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed, Share_Tech_Mono, Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
+import Script from "next/script";
 import "./globals.css";
 
 const barlowCondensed = Barlow_Condensed({
@@ -39,6 +40,18 @@ export default function RootLayout({
       className={`${barlowCondensed.variable} ${shareTechMono.variable} ${inter.variable}`}
       style={{ overflowX: "hidden", maxWidth: "100vw" }}
     >
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-1Y1XHWF2HF"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1Y1XHWF2HF');
+        `}
+      </Script>
       <body style={{ backgroundColor: "#030008", margin: 0, overflowX: "hidden", maxWidth: "100vw", width: "100%" }}>{children}</body>
     </html>
   );
