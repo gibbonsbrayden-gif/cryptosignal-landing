@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 const APP_URL = "https://app.getcryptosignal.com/dashboard";
 
 const trustPills = [
@@ -196,13 +194,10 @@ export default function Hero() {
           <div
             style={{ overflow: "hidden", borderRadius: 16, border: "1px solid rgba(139,92,246,0.30)", boxShadow: "0 0 60px rgba(139,92,246,0.3)", width: "100%" }}
           >
-            <Image
+            <img
               src="/dashboard-preview.png"
-              alt="CryptoSignal dashboard"
-              width={2940}
-              height={1666}
+              alt="CryptoSignal Dashboard"
               style={{ width: "100%", height: "auto", display: "block" }}
-              priority
             />
           </div>
         </div>
