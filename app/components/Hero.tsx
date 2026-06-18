@@ -189,10 +189,29 @@ export default function Hero() {
         </div>
         </div>{/* end left column */}
 
-        {/* Right column — dashboard screenshot */}
-        <div className="hero-right-col" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+        {/* Full-width row — platform preview below all text */}
+        <div style={{ gridColumn: "1 / -1", marginTop: 48, textAlign: "center" }}>
+          <p
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.2em",
+              color: "rgba(255,255,255,0.35)",
+              fontFamily: "var(--font-mono-tech, monospace)",
+              textTransform: "uppercase",
+              marginBottom: 16,
+            }}
+          >
+            Platform Preview
+          </p>
           <div
-            style={{ overflow: "hidden", borderRadius: 16, border: "1px solid rgba(139,92,246,0.30)", boxShadow: "0 0 60px rgba(139,92,246,0.3)", width: "100%" }}
+            style={{
+              maxWidth: 900,
+              margin: "0 auto",
+              overflow: "hidden",
+              borderRadius: 16,
+              border: "1px solid rgba(139,92,246,0.30)",
+              boxShadow: "0 0 60px rgba(139,92,246,0.3)",
+            }}
           >
             <img
               src="/dashboard-preview.png"
