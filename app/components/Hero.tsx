@@ -118,7 +118,7 @@ export default function Hero() {
               backdropFilter: "blur(8px)",
             }}
           >
-            Start Trading Smarter
+            See Today&apos;s Signals Free →
             {/* Circle badge on right — VoidWatch signature */}
             <span
               style={{
