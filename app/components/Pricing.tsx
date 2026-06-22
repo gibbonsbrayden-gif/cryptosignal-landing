@@ -16,8 +16,7 @@ const freeFeatures = [
 
 const proFeatures = [
   "🔥 500 credits per month",
-  "Pre-Move Radar — multi-agent AI scanner 🆕",
-  "AI Chart Reader — unlimited 🆕",
+  "Pre-Move Radar — multi-agent AI scanner",
   "AI Coin Analysis — unlimited",
   "Full Whale Tracker — ETH chain",
   "Morning Briefing with live news catalysts",
